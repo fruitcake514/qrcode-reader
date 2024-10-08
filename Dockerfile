@@ -1,11 +1,14 @@
 # Use an official Python runtime as a parent image
 FROM python:3.9-slim
 
+# Install git so we can clone the repository
+RUN apt-get update && apt-get install -y git
+
+# Clone the GitHub repository
+RUN git clone https://github.com/fruitcake514/qrcode-reader.git /app
+
 # Set the working directory in the container
 WORKDIR /app
-
-# Copy the current directory contents into the container at /app
-COPY . /app
 
 # Install any necessary dependencies
 RUN pip install --no-cache-dir -r requirements.txt
