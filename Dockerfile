@@ -10,7 +10,7 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Clone the GitHub repository
-RUN git clone https://github.com/<your-username>/<your-repo>.git /app
+RUN git clone https://github.com/fruitcake514/qrcode-reader.git /app
 
 # Set the working directory in the container
 WORKDIR /app
