@@ -2,10 +2,10 @@ version: '3.8'
 
 services:
   flask-app:
+    network: bridge
     build: .
     ports:
       - "8000:5000"
-    volumes:
-      - .:/app
     environment:
       FLASK_ENV: development
+    resart: unless-stopped
