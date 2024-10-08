@@ -6,6 +6,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     git \
     libgl1-mesa-glx \
+    libglib2.0-0 \  # Add this line to install the GLib library
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
