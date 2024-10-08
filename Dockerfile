@@ -6,9 +6,14 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     git \
     libgl1-mesa-glx \
-    libglib2.0-0 \  # Add this line to install the GLib library
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    libglib2.0-0 \
+    libatlas-base-dev \
+    libjpeg-dev \
+    libtbb2 \
+    libtiff5-dev \
+    libgtk-3-dev && \  # Install additional libraries
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Clone the GitHub repository
 RUN git clone https://github.com/fruitcake514/qrcode-reader.git /app
