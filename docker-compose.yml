@@ -7,7 +7,9 @@ services:
       context: https://github.com/fruitcake514/qrcode-reader.git
       dockerfile: Dockerfile
     ports:
-      - "8000:5000"
+      - "5000:5000"
+    volumes:
+      - ./uploads:/app/uploads
     environment:
       FLASK_ENV: development
     restart: unless-stopped
