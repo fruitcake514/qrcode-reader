@@ -11,7 +11,7 @@ RUN apt update && \
     libjpeg-dev \
     libtbb2 \
     libtiff5-dev \
-    libgtk-3-dev && \  # Install additional libraries
+    libgtk-3-dev && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
