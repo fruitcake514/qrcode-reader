@@ -2,17 +2,17 @@
 FROM python:3.9-slim
 
 # Install required system libraries
-RUN apt update && \
-    apt install -y --no-install-recommends \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
     git \
     libgl1-mesa-glx \
     libglib2.0-0 \
     libatlas-base-dev \
     libjpeg-dev \
-    libtbb2 \
+    libtbbmalloc2 \
     libtiff5-dev \
     libgtk-3-dev && \
-    apt clean && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Clone the GitHub repository
