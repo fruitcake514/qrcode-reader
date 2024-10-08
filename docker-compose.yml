@@ -2,10 +2,12 @@ version: '3.8'
 
 services:
   flask-app:
-    network: bridge
-    build: .
+    network_mode: bridge
+    build:
+      context: https://github.com/fruitcake514/qrcode-reader.git
+      dockerfile: Dockerfile
     ports:
       - "8000:5000"
     environment:
       FLASK_ENV: development
-    resart: unless-stopped
+    restart: unless-stopped
